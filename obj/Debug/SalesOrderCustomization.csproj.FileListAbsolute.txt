@@ -90,3 +90,4 @@ C:\Users\Fujitsu\Documents\Visual Studio 2015\Projects\AcumaticaDemo3\SalesOrder
 C:\Users\Fujitsu\Documents\Visual Studio 2015\Projects\AcumaticaDemo3\SalesOrderCustomization\bin\Debug\zh-Hant\System.Spatial.resources.dll
 C:\Users\Fujitsu\Documents\Visual Studio 2015\Projects\AcumaticaDemo3\SalesOrderCustomization\obj\Debug\SalesOrderCustomization.dll
 C:\Users\Fujitsu\Documents\Visual Studio 2015\Projects\AcumaticaDemo3\SalesOrderCustomization\obj\Debug\SalesOrderCustomization.pdb
+C:\Users\Fujitsu\Documents\Visual Studio 2015\Projects\AcumaticaDemo3\SalesOrderCustomization\obj\Debug\SalesOrderCustomization.csprojResolveAssemblyReference.cache

@@ -216,7 +216,8 @@ namespace SalesOrderCustomization
         [PXDBShort, PXUIField(DisplayName = "Attribute number")]
         public virtual short? SortOrder
         {
-            get; set;
+            get;
+            set;
         }
     }
     public class SOOrderEntryExt : PXGraphExtension<SOOrderEntry>
@@ -275,7 +276,8 @@ namespace SalesOrderCustomization
             CSAnswers attr = PXSelectJoin<CSAnswers,
                     LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
                     LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
-                    Where<CSAttributeGroup.sortOrder, Equal<int_1>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
+                    Where<CSAttributeGroup.sortOrder, Equal<int_1>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>,
+                    And<CSAttributeGroup.attributeID, Equal<CSAnswers.attributeID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
             if (attr != null)
             {
                 e.ReturnValue = attr.Value;
@@ -290,9 +292,10 @@ namespace SalesOrderCustomization
             //        Where<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>.SelectSingleBound(Base, new object[] { e.Row });
 
             CSAnswers attr = PXSelectJoin<CSAnswers,
-                    LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
-                    LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
-                    Where<CSAttributeGroup.sortOrder, Equal<int_1>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
+                     LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
+                     LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
+                     Where<CSAttributeGroup.sortOrder, Equal<int_1>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>,
+                     And<CSAttributeGroup.attributeID, Equal<CSAnswers.attributeID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
             if (attr != null)
             {
                 e.ReturnValue = attr.AttributeID;
@@ -306,9 +309,10 @@ namespace SalesOrderCustomization
             if (e.Row == null) return;
 
             CSAnswers attr = PXSelectJoin<CSAnswers,
-                    LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
-                    LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
-                    Where<CSAttributeGroup.sortOrder, Equal<int_2>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
+                     LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
+                     LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
+                     Where<CSAttributeGroup.sortOrder, Equal<int_2>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>,
+                     And<CSAttributeGroup.attributeID, Equal<CSAnswers.attributeID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
             if (attr != null)
             {
                 e.ReturnValue = attr.Value;
@@ -323,9 +327,10 @@ namespace SalesOrderCustomization
             //        Where<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>.SelectSingleBound(Base, new object[] { e.Row });
 
             CSAnswers attr = PXSelectJoin<CSAnswers,
-                    LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
-                    LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
-                    Where<CSAttributeGroup.sortOrder, Equal<int_2>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
+                      LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
+                      LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
+                      Where<CSAttributeGroup.sortOrder, Equal<int_2>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>,
+                      And<CSAttributeGroup.attributeID, Equal<CSAnswers.attributeID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
             if (attr != null)
             {
                 e.ReturnValue = attr.AttributeID;
@@ -339,9 +344,10 @@ namespace SalesOrderCustomization
             if (e.Row == null) return;
 
             CSAnswers attr = PXSelectJoin<CSAnswers,
-                    LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
-                    LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
-                    Where<CSAttributeGroup.sortOrder, Equal<int_3>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
+                     LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
+                     LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
+                     Where<CSAttributeGroup.sortOrder, Equal<int_3>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>,
+                     And<CSAttributeGroup.attributeID, Equal<CSAnswers.attributeID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
             if (attr != null)
             {
                 e.ReturnValue = attr.Value;
@@ -358,7 +364,8 @@ namespace SalesOrderCustomization
             CSAnswers attr = PXSelectJoin<CSAnswers,
                     LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
                     LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
-                    Where<CSAttributeGroup.sortOrder, Equal<int_3>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
+                    Where<CSAttributeGroup.sortOrder, Equal<int_3>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>,
+                    And<CSAttributeGroup.attributeID, Equal<CSAnswers.attributeID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
             if (attr != null)
             {
                 e.ReturnValue = attr.AttributeID;
@@ -372,9 +379,10 @@ namespace SalesOrderCustomization
             if (e.Row == null) return;
 
             CSAnswers attr = PXSelectJoin<CSAnswers,
-                    LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
-                    LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
-                    Where<CSAttributeGroup.sortOrder, Equal<int_4>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
+                     LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
+                     LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
+                     Where<CSAttributeGroup.sortOrder, Equal<int_4>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>,
+                     And<CSAttributeGroup.attributeID, Equal<CSAnswers.attributeID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
             if (attr != null)
             {
                 e.ReturnValue = attr.Value;
@@ -389,9 +397,10 @@ namespace SalesOrderCustomization
             //        Where<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>.SelectSingleBound(Base, new object[] { e.Row });
 
             CSAnswers attr = PXSelectJoin<CSAnswers,
-                    LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
-                    LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
-                    Where<CSAttributeGroup.sortOrder, Equal<int_4>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
+                     LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
+                     LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
+                     Where<CSAttributeGroup.sortOrder, Equal<int_4>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>,
+                     And<CSAttributeGroup.attributeID, Equal<CSAnswers.attributeID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
             if (attr != null)
             {
                 e.ReturnValue = attr.AttributeID;
@@ -405,9 +414,10 @@ namespace SalesOrderCustomization
             if (e.Row == null) return;
 
             CSAnswers attr = PXSelectJoin<CSAnswers,
-                    LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
-                    LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
-                    Where<CSAttributeGroup.sortOrder, Equal<int_5>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
+                     LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
+                     LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
+                     Where<CSAttributeGroup.sortOrder, Equal<int_5>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>,
+                     And<CSAttributeGroup.attributeID, Equal<CSAnswers.attributeID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
             if (attr != null)
             {
                 e.ReturnValue = attr.Value;
@@ -424,7 +434,8 @@ namespace SalesOrderCustomization
             CSAnswers attr = PXSelectJoin<CSAnswers,
                     LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
                     LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
-                    Where<CSAttributeGroup.sortOrder, Equal<int_5>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
+                    Where<CSAttributeGroup.sortOrder, Equal<int_5>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>,
+                    And<CSAttributeGroup.attributeID, Equal<CSAnswers.attributeID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
             if (attr != null)
             {
                 e.ReturnValue = attr.AttributeID;
@@ -438,9 +449,10 @@ namespace SalesOrderCustomization
             if (e.Row == null) return;
 
             CSAnswers attr = PXSelectJoin<CSAnswers,
-                    LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
-                    LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
-                    Where<CSAttributeGroup.sortOrder, Equal<int_6>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
+                     LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
+                     LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
+                     Where<CSAttributeGroup.sortOrder, Equal<int_6>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>,
+                     And<CSAttributeGroup.attributeID, Equal<CSAnswers.attributeID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
             if (attr != null)
             {
                 e.ReturnValue = attr.Value;
@@ -455,9 +467,10 @@ namespace SalesOrderCustomization
             //        Where<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>.SelectSingleBound(Base, new object[] { e.Row });
 
             CSAnswers attr = PXSelectJoin<CSAnswers,
-                    LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
-                    LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
-                    Where<CSAttributeGroup.sortOrder, Equal<int_6>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
+                      LeftJoin<InventoryItem, On<CSAnswers.entityID, Equal<InventoryItem.inventoryID>>,
+                      LeftJoin<CSAttributeGroup, On<CSAttributeGroup.entityClassID, Equal<InventoryItem.itemClassID>>>>,
+                      Where<CSAttributeGroup.sortOrder, Equal<int_6>, And<CSAnswers.entityID, Equal<Current<SOSiteStatusSelected.inventoryID>>,
+                      And<CSAttributeGroup.attributeID, Equal<CSAnswers.attributeID>>>>>.SelectSingleBound(Base, new object[] { e.Row });
             if (attr != null)
             {
                 e.ReturnValue = attr.AttributeID;
